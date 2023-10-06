@@ -1,0 +1,147 @@
+
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+    /* list-style: none; */
+}
+.main-outer{
+    background-color: #f5f5f5;
+    padding: 15px;
+}
+.price{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+}
+.emi{
+    margin: 0 0 0 12px;
+    color: #606060;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 20px;
+}
+.card{
+    width: 75%;
+    margin: auto;
+    background-color: white;
+    border:1px solid #d7d7d7;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom:10px ;
+    margin-bottom: 15px;
+}
+.area-location{
+    padding-bottom: 16px;
+    padding-top: 6px;
+    color: #606060;
+    font-size: 14px;
+}
+.area{
+    font-weight: 600;
+}
+.info{
+    display: flex;
+    flex-wrap: wrap;
+}
+.image-info{
+    width: 35%;
+    margin: 5px;
+}   
+.image-info img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.text-info{
+    width: 61%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
+}
+.text-top-section{
+    list-style: none;
+    display: flex;
+    align-items: start;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+.text-top-section li{
+    padding: 10px;
+}
+.text-bottom-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+.text-bottom-section li{
+    width: 33%;
+    list-style: none;
+}
+.item{
+    padding: 10px;
+}
+.buttons a{
+    display: inline-block;
+    margin: 10px;
+    border-radius: 50px;
+    border: 1px solid red;
+    text-decoration: none;
+    padding: 13px;
+}
+.red-white-button , .white-red-button:hover{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+.red-white-button:hover{
+    background-color: rgb(182, 0, 0);
+}
+.white-red-button{
+    background-color: white;
+    color: red;
+    font-weight: bold;
+}
+
+
+.simple-ul{
+    margin-top: 10px;
+    color: #303030;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 0 0 8px 18px;
+    position: relative;
+    line-height: 30px;
+}
+.more-details{
+    margin-top: 10px;
+    list-style: none;
+}
+.more-details td{
+    padding: 10px 10px 10px 0px;
+}
+.more-details td:nth-child(1){
+    width: 20%;
+}
+.more-details td:nth-child(2){
+    font-weight:bolder;
+}
+
+.card-header{
+    font-size: 24px;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 32px;
+    position: relative;
+}
+
+.sec-info{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.amenitie{
+    width: 30%;
+    padding: 12px 10px 12px 0px;
+}

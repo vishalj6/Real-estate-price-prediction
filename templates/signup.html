@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Welcome to My Website{% endblock %}
+{% block csslink %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}"> {% endblock %}
+
+{% block content %}
+
+<div class="main_webpage">
+    <div class="main_left">
+        <div class="left_card">
+            <h4>Things you Can Do with Real Estate Account</h4>
+            <ul>
+                <li>Post one Single Property for FREE</li>
+                <li>Set property alerts for your requirement </li>
+                <li>Get accessed by over 1 Lakh buyers </li>
+                <li>Showcase your property as Rental, PG or for Sale</li>
+                <li>Get instant queries over Phone, Email and SMS</li>
+                <li>Performance in search &amp; Track responses &amp; views online </li>
+                <li>Add detailed property information &amp; multiple photos per listing</li>
+            </ul>
+        </div>
+    </div>
+    <div class="main_right">
+        <form method="post" class="centered-form">
+            {% csrf_token %}
+            <div class="signup_card">
+                <div class="signup_container">
+                    <h6>Sign up</h6>
+                    <div class="input_box">
+                        
+                        {% for field in form %}
+                        {{field}}
+                        {% endfor %}
+
+                        {% if form.errors %}
+                        <div style="margin:5px 0px;color: rgba(255, 255, 255, 1); background-color:rgba(255, 60, 25, 0.769); padding:2px;border-radius:5px">{{form.errors}}</div>
+                        {% endif %}
+                        {% comment %} {{form.non_field_errors}} {% endcomment %}
+
+                        <label class="checkbox" for="checkbox">
+                            <input class="check" type="checkbox" name="checkbox" id="checkbox" required /> I agree to Magicbricks T&C, Privacy Policy, & Cookie Policy</label>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100">Sign Up</button>
+                </div>
+
+                <div class="already_container bg-light text-center">
+                    <p>Already Registered? <a href="{% url 'login' %}">Login Now</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

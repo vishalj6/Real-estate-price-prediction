@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Welcome to My Website{% endblock %}
+
+{% block content %} 
+<div class="form-div">
+    <form>
+        <label for="Location"><i class="fa-solid fa-location-dot" style="color: #f00024;"></i></label>
+        <input type="text" name="Location" id="Location" placeholder="Enter Location">
+        <label for="Flat"><i class="fa-solid fa-house" style="color: #ff0000;"></i></label>
+        <input type="text" name="Flat" id="Flat" placeholder="Flat">
+        <label for="Budget"><i class="fa-solid fa-indian-rupee-sign" style="color: #ff0000;"></i></label>
+        <input type="text" name="Budget" placeholder="Budget" id="Budget">
+        <button class="submit" type="submit" name="submit-search"> <span><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></span> Search</button>
+    </form>
+</div>
+<div class="container mt-4">
+    {% block homecontent %}{% endblock %}
+</div>
+<!-- 
+he
+Add a link to the custom CSS file -->
+
+ <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+

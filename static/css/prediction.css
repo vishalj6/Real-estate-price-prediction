@@ -1,0 +1,91 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.pred-main-div {
+    background: url(https://cdn.staticmb.com/loginstatic/images/leftPanel-Bg.jpg) no-repeat;
+    background-size: cover;
+    box-shadow: none;
+    padding: 20px 5px;
+}
+
+.pred-welcome {
+    font-family: cursive;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: large;
+}
+
+/* .pred-main-div {
+    border:1px solid red;
+} */
+
+.centered-form {
+    width: 40%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid rgba(195, 195, 195, 0.655);
+    border-radius: 15px;
+    background-color: #fff;
+    /* backdrop-filter: blur(20px); */
+}
+
+.custom-input-class {
+    width: 100%;
+    border-radius: 30px;
+    padding: 5px 20px;
+    background-color: #edecec;
+    border: 0px solid;
+}
+
+.custom-input-class:hover {
+    background-color: #e7e4e4;
+}
+
+.custom-submit-button {
+    background-color: red;
+    padding: 5px;
+    border-radius: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.pred-label {
+    color: black;
+    margin-left: 5px;
+    margin-bottom: 2px;
+}
+
+.pred-price-div {
+    width: 80%;
+    margin-top: 10px;
+    padding: 30px 10px;
+    text-align: center;
+    background-color: #81818184;
+}
+
+.pred-price-div h2 {
+    margin: 0px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.pred-price {
+    font-size: 30px;
+    font-weight: 700;
+    background-color: #ff2020cb;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.custom-submit-button {
+    font-size: larger;
+    margin: 5px 2px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+}

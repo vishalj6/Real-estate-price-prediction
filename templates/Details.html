@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block csslink %} <link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}"> {%endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'details_page.css' %}">
+<div class="main-outer">
+    <div class="main-inner">
+        <div class="left-section-outer">
+            <div class="left-section-inner">
+                <div class="crads">
+                    <div class="card section-1">
+                        <div class="price-emi">
+                            <span class="price">
+                                {{price}}
+                            </span>
+                            <span class="emi">
+                                EMI - ₹{{EMI}}k
+                            </span>
+                        </div>
+                        <div class="area-location">
+                            <span>{{BHK}} BHK {{Sqft}} Sq-ft Flat For Sale</span> <span class="area">{{location}}</span>
+                        </div>
+                        <div class="info">
+                            <div class="image-info">
+                                <img src='https://img.staticmb.com/mbimages/project/Photo_h310_w462/2023/06/21/Project-Photo-1-Satya-Sankalp-Sky-Ahmedabad-5310455_345_1366_310_462.jpg' alt="">
+                            </div>
+                            <div class="text-info">
+                                <ul class="text-top-section">
+                                    {% for i in basic_info_1 %}
+                                        <li>
+                                            <div>
+                                                {{i.value}} {{i.key}}
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <ul class="text-bottom-section">
+                                    {% for i in basic_info_2 %}
+                                        <li>
+                                            <div class="item">
+                                                {{i.key}}
+                                                <br>
+                                                <b>{{i.value}}</b>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="buttons">
+                            <a href="" class="red-white-button">Contact Builder</a>
+                            <a href="" class="white-red-button">Download Brochure</a>
+                        </div>
+                    </div>
+                    <div class="card section-2">
+                        <div class="card-header">
+                            Why buy in this project?
+                        </div>
+                        <ul class="simple-ul">
+                            {% for i in Why_buy_in_this_project %}
+                                <li>
+                                    {{i}}
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+                    <div class="card section-3">
+                        <div class="card-header">
+                            More Details
+                        </div>
+                        <table class="more-details">
+                            {% for i in More_Details %}
+                                <tr>
+                                    <td class="key">
+                                        {{i.key}}
+                                    </td>
+                                    <td class="value">
+                                        {{i.value}}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="card section-4">
+                        <div class="card-header">Amenities</div>
+                        <div class="sec-info">
+
+                            {% for i in Amenities %}
+                            <div class="amenitie">
+                                {{i}}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-section-outer">
+            <div class="right-section-inner">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

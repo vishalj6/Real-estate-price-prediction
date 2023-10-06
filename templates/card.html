@@ -1,0 +1,58 @@
+{% extends "home.html" %}
+<!-- {% load static %} -->
+
+<!-- {% block title %}Welcome to My Website{% endblock %} -->
+{% block csslink %} <link rel="stylesheet" type="text/css" href="{% static 'css/card.css' %}"> {%endblock %}
+
+{% block homecontent %} 
+{% for property in json_data %}
+<div class="card-body">
+    <div class="flat-details" style="width: auto;">
+        <div class="image-div">
+            <img src="{{ property.image }}" alt="flat">
+        </div>
+        <div class="property-header">
+            <div class="top-div">
+                <span class="brokerage"><i class="fa-solid fa-check" style="color: #009681;"></i> Zero Brokerage</span>
+                <span class="icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </span>
+            </div>
+            <div class="flat-name">
+                <a href="">{{ property.line_below_price }} in {{ property.location }}</a>
+            </div>
+            <div class="more-details">
+                {% for detail in property.details_summary_2 %}
+                    <div class="small-div">
+                        <span>{{ detail.key }}</span>
+                        <span>{{ detail.value }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="last-div">
+                RISE YOUR FUTURE {{ property.location }} is an affordable luxury apartment project where people find class, comfort, and security, all packed in one community!
+            </div>
+        </div>
+    </div>
+    <div class="price-details">
+        <div class="main-mrp">
+            <p>{{ property.price }}</p>
+            <p class="second">{{ property.emi }}</p>
+        </div>
+        <div class="info-div-price">
+            <button class="callback">
+                Request Callback
+            </button>
+            <button class="get-info">
+                Get Info
+            </button>
+        </div>
+        <a href="" class="emi">Calculate EMI</a>
+    </div>
+</div>
+{% endfor %}
+
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
+    {% endblock %}

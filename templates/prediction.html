@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}Welcome to My Website{% endblock %}
+{% block csslink %} <link rel="stylesheet" type="text/css" href="{% static 'css/prediction.css' %}"> {%endblock %}
+
+{% block content %}
+
+<div class="container pred-main-div">
+    <div class="pred-welcome">
+        "Welcome to our Home Price Prediction Tool!
+        <br>Discover the estimated value of your dream home with just a few clicks."
+    </div>
+    <form method="post" class="centered-form">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            <label class="pred-label" for="{{ field.id_for_label }}"><sub>{{ field.label }}</sub></label>
+            {{ field|add_class:"custom-input-class" }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="custom-submit-button">Get Estimated Price</button>
+    </form>
+    {% if predicted_price %}
+    <div class="pred-price-div container">
+        <h2>Estimated Price: <span class="pred-price"><b>₹</b>{{ predicted_price|floatformat:2 }}</span></h2>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

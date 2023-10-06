@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block csslink %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"> {% endblock %}
+
+{% block content %}
+<div class="main_webpage">
+    <div class="main_left">
+        <div class="left_card">
+            <h4>Things you Can Do with Real Estate Account</h4>
+            <ul>
+                <li>Post one Single Property for FREE</li>
+                <li>Set property alerts for your requirement </li>
+                <li>Get accessed by over 1 Lakh buyers </li>
+                <li>Showcase your property as Rental, PG or for Sale</li>
+                <li>Get instant queries over Phone, Email and SMS</li>
+                <li>Performance in search &amp; Track responses &amp; views online </li>
+                <li>Add detailed property information &amp; multiple photos per listing</li>
+            </ul>
+        </div>
+    </div>
+    <div class="main_right">
+        <form method="post" class="centered-form">
+            {% csrf_token %}
+            <div class="login_card">
+                <div class="login_container">
+                    <h6>Login</h6>
+                    <div class="input_box">
+                        <input type="text" name="username" id="username" placeholder="Enter Username" required />
+                        <input type="password" name="password" id="password" placeholder="Enter password" required />
+                    </div>
+
+                    {% for message in messages %}
+                    <p style="margin:5px 0px;color: rgba(255, 255, 255, 1); background-color:rgba(255, 60, 25, 0.769); padding:2px;border-radius:5px">{{ message }}</p>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-danger w-100">Next</button>
+                </p>
+
+                <div class="new_signup_container bg-light text-center">
+                    <p>New to Real Estate? <a href="{% url 'signup' %}">Sign Up</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

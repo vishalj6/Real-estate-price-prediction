@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Page 2{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="chart-heading" style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">World Population by Country</h1>
+        </div>
+    </div>
+    <div class="row chart-container">
+        <div class="col-md-6">
+            <h2 class="chart-subheading" style="font-size: 20px; font-weight: bold; margin-left: 120px;">Pie Chart</h2>
+            <canvas id="myChart1" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h2 class="chart-subheading" style="font-size: 20px; font-weight: bold; margin-left: 100px;">Doughnut Chart</h2>
+            <canvas id="myChart2" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <!-- Facts about Population -->
+    <div class="row mt-4">
+        <div class="col-md-12 mt-0 pt-0">
+            <h2 class="chart-subheading mt-0 pt-0" style="font-size: 20px; font-weight: bold;">Facts about World Population</h2>
+            <ul class="population-facts">
+                <li><span class="fact-label">Fact 1:</span> The world population is approximately 7.9 billion people.</li>
+                <li><span class="fact-label">Fact 2:</span> China and India are the two most populous countries.</li>
+                <li><span class="fact-label">Fact 3:</span> The global population is unevenly distributed, with some areas more densely populated than others.</li>
+                <li><span class="fact-label">Fact 4:</span> Population growth rates vary widely from country to country.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Parse the JSON data from the template variable for the pie chart
+    var chartData = JSON.parse('{{ chart_data_json|escapejs }}');
+
+    // Create the pie chart using Chart.js
+    var ctx1 = document.getElementById('myChart1').getContext('2d');
+    var myChart1 = new Chart(ctx1, {
+        type: 'pie',
+        data: {
+            labels: chartData.labels,
+            datasets: [{
+                data: chartData.data,
+                backgroundColor: chartData.backgroundColor,
+                borderColor: chartData.backgroundColor, // Use the same color for borders
+                borderWidth: 1, // Add a border around each segment
+            }],
+        },
+        options: {
+            responsive: false, // Disable responsiveness to control size
+            maintainAspectRatio: false, // Disable aspect ratio
+            plugins: {
+                legend: {
+                    position: 'right', // Place legend on the right side
+                    labels: {
+                        fontColor: 'black',
+                    },
+                },
+            },
+        },
+    });
+
+    // Create the doughnut chart using Chart.js
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+    var myChart2 = new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+            labels: chartData.labels,
+            datasets: [{
+                data: chartData.data,
+                backgroundColor: chartData.backgroundColor,
+                borderColor: chartData.backgroundColor, // Use the same color for borders
+                borderWidth: 1, // Add a border around each segment
+            }],
+        },
+        options: {
+            responsive: false, // Disable responsiveness to control size
+            maintainAspectRatio: false, // Disable aspect ratio
+            plugins: {
+                legend: {
+                    position: 'right', // Place legend on the right side
+                    labels: {
+                        fontColor: 'black',
+                    },
+                },
+            },
+        },
+    });
+</script>
+{% endblock %}
